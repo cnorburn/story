@@ -1,6 +1,7 @@
 package com.aerian.bbc.configuration;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,29 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("com.aerian.bbc")
 @EnableTransactionManagement
-public class JPAConfigTwo {
+public class JPAConfig {
+
+    @Value("${hibernate.hbm2ddl.auto}")
+    private String jpaHibernateHbm2ddlAuto;
+
+    @Value("${hibernate.dialect}")
+    private String jpaHibernateDialect;
+
+    @Value("${hibernate.adapterVendor}")
+    private String jpaHibernateAdapterVendor;
+
+    @Value("${database.driverClassName}")
+    private String dataSourceDriverClassName;
+
+    @Value("${database.url}")
+    private String dataSourceUrl;
+
+    @Value("${database.username}")
+    private String dataSourceUsername;
+
+    @Value("${database.password}")
+    private String dataSourcePassword;
+
     @Bean
     public JpaTransactionManager jpaTransMan(){
         JpaTransactionManager jtManager = new JpaTransactionManager(
@@ -33,10 +56,10 @@ public class JPAConfigTwo {
     @Bean
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost/500words?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setDriverClassName(this.dataSourceDriverClassName);
+        dataSource.setUrl(this.dataSourceUrl);
+        dataSource.setUsername(this.dataSourceUsername);
+        dataSource.setPassword(this.dataSourcePassword);
         return dataSource;
     }
 }

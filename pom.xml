@@ -97,6 +97,16 @@
             <artifactId>WindRide</artifactId>
             <version>1.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-java8</artifactId>
+            <version>5.0.0.Final</version>
+        </dependency>
 
 
     </dependencies>
@@ -150,8 +160,9 @@
         </plugins>
         <resources>
             <resource>
-                <directory>src</directory>
-             </resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
         </resources>
     </build>
 
