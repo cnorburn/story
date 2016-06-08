@@ -16,8 +16,9 @@ public class WriterDao {
     @PersistenceContext
     EntityManager entityManager;
 
-    public void saveStory(Writer writer){
+    public int saveStory(Writer writer){
         entityManager.persist(writer);
+        return writer.getId();
     }
 
     public void deleteStory(int id){

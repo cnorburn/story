@@ -21,8 +21,8 @@ public class WriterService {
         return writerDao.byId(id);
     }
 
-    public void saveStory(Writer writer){
-        writerDao.saveStory(writer);
+    public int saveStory(Writer writer){
+        return writerDao.saveStory(writer);
     }
 
     public void updateStory(Writer writer){
