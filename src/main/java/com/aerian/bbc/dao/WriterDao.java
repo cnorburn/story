@@ -5,16 +5,23 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 
 @Repository
-@Transactional(readOnly = false)
+@Transactional
 public class WriterDao {
 
     @PersistenceContext
     EntityManager entityManager;
+    private EntityManagerFactory writerDao;
+
+    public void setEntityManagerFactoryBean(EntityManagerFactory entityManager) {
+        entityManager=entityManager;
+    }
+
 
     public int saveStory(Writer writer){
         entityManager.persist(writer);
@@ -47,7 +54,12 @@ public class WriterDao {
         return entityManager.find(Writer.class,id);
     }
 
+    public void setWriterDao(EntityManagerFactory writerDao) {
+        this.writerDao = writerDao;
+    }
 
-
+    public EntityManagerFactory getWriterDao() {
+        return writerDao;
+    }
 
 }
