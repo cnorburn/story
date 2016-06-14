@@ -5,7 +5,7 @@
              version="2.0">
     <persistence-unit name="localContainerEntity" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>com.aerian.bbc.entities.Writer</class>
+        <class>com.aerian.bbc.entities.Story</class>
     </persistence-unit>
 
 

@@ -8,8 +8,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "writer")
-public class Writer {
+@Table(name = "stories")
+public class Story {
 
     @Id
     @Column(name = "id")
