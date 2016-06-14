@@ -18,9 +18,9 @@ public class StoryDao {
     EntityManager entityManager;
     private EntityManagerFactory storyDao;
 
-    public void setEntityManagerFactoryBean(EntityManagerFactory entityManager) {
-        entityManager=entityManager;
-    }
+//    public void setEntityManagerFactoryBean(EntityManagerFactory entityManager) {
+//        entityManager=entityManager;
+//    }
 
 
     public int saveStory(Story story){
@@ -54,12 +54,12 @@ public class StoryDao {
         return entityManager.find(Story.class,id);
     }
 
-    public void setstoryDao(EntityManagerFactory storyDao) {
-        this.storyDao = storyDao;
-    }
-
-    public EntityManagerFactory getstoryDao() {
-        return storyDao;
-    }
+//    public void setstoryDao(EntityManagerFactory storyDao) {
+//        this.storyDao = storyDao;
+//    }
+//
+//    public EntityManagerFactory getstoryDao() {
+//        return storyDao;
+//    }
 
 }

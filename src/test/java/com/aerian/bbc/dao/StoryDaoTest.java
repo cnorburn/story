@@ -1,5 +1,6 @@
 package com.aerian.bbc.dao;
 
+import com.aerian.bbc.configuration.JPATestConfig;
 import com.aerian.bbc.entities.Story;
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,18 +8,22 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= "classpath:/resources/test-context.xml")
+//@ContextConfiguration(locations= "classpath:/test/resources/test-context.xml")
+@WebAppConfiguration
+@ContextConfiguration(loader = AnnotationConfigWebContextLoader.class,classes = {JPATestConfig.class})
 @Transactional
 public class StoryDaoTest {
 
     @Autowired
-    StoryDao storyDao;
+    StoryDao storyDao=new StoryDao();
 
     @Test
     public void testGetStories(){
