@@ -22,6 +22,12 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>1.3.5.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+
 
 
         <dependency>
@@ -115,36 +121,33 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--&lt;!&ndash;<artifactId>org.springframework.test</artifactId>&ndash;&gt;-->
-            <!--<artifactId>spring-test</artifactId>-->
-            <!--&lt;!&ndash;<version>3.0.4.RELEASE</version>&ndash;&gt;-->
-            <!--<version>4.2.6.RELEASE</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.8.4</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.2.6.RELEASE</version>
+            <groupId>org.hawkular.btm</groupId>
+            <artifactId>hawkular-btm-agent-rest</artifactId>
+            <version>0.5.1.Final-SNAPSHOT</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>3.0.4.RELEASE</version>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.9.0</version>
         </dependency>
 
 
     </dependencies>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <pluginManagement>
             <plugins>
                 <plugin>

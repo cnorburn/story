@@ -16,7 +16,6 @@ import java.sql.Date;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations= "classpath:/test/resources/test-context.xml")
 @WebAppConfiguration
 @ContextConfiguration(loader = AnnotationConfigWebContextLoader.class,classes = {JPATestConfig.class})
 @Transactional
