@@ -1,8 +1,7 @@
 package com.aerian.bbc.entities;
 
 import com.aerian.bbc.views.Views;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.util.Date;

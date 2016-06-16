@@ -4,9 +4,7 @@ import com.aerian.bbc.entities.Story;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -16,12 +14,6 @@ public class StoryDao {
 
     @PersistenceContext
     EntityManager entityManager;
-    private EntityManagerFactory storyDao;
-
-//    public void setEntityManagerFactoryBean(EntityManagerFactory entityManager) {
-//        entityManager=entityManager;
-//    }
-
 
     public int saveStory(Story story){
         entityManager.persist(story);
@@ -54,12 +46,5 @@ public class StoryDao {
         return entityManager.find(Story.class,id);
     }
 
-//    public void setstoryDao(EntityManagerFactory storyDao) {
-//        this.storyDao = storyDao;
-//    }
-//
-//    public EntityManagerFactory getstoryDao() {
-//        return storyDao;
-//    }
 
 }
