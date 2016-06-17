@@ -28,10 +28,6 @@ public class StoryDao {
     public void updateStory(Story story){
 
         Story s= entityManager.find(Story.class,story.getId());
-        s.setName(story.getName());
-        s.setSchool(story.getSchool());
-        s.setDob(story.getDob());
-        s.setGender(story.getGender());
         s.setTitle(story.getTitle());
         s.setText(story.getText());
 

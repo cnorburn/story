@@ -57,7 +57,7 @@ public class StoryControllerTest {
     @Test
     public void getStoryById() throws Exception {
         Story story=new Story();
-        story.setName("author");
+        story.setTitle("story title");
 
         when(storyService.byId(1)).thenReturn(story);
 
@@ -67,7 +67,7 @@ public class StoryControllerTest {
                 .andReturn()
                 .getResponse().getContentAsString();
         JsonPath jsonPath = new JsonPath(content);
-        assertThat(jsonPath.getString("name"), equalTo("author"));
+        assertThat(jsonPath.getString("title"), equalTo("story title"));
 
         mockMvc.perform(get("/stories/{id}",2)).andExpect(status().isNotFound());
 
@@ -77,7 +77,7 @@ public class StoryControllerTest {
     public void saveStory() throws Exception {
 
         MvcResult result = mockMvc.perform(post("/stories/").contentType(APPLICATION_JSON_UTF8)
-                .content( "{ \"name\": \"" + "author" + "\"}"))
+                .content( "{ \"title\": \"" + "story title" + "\"}"))
                 .andExpect(status().isOk())
                 .andReturn();
 

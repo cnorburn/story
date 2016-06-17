@@ -12,7 +12,6 @@ import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Date;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -29,14 +28,14 @@ public class StoryDaoTest {
         List<Story> stories= storyDao.selectAll();
 
         Assert.assertNotNull(stories);
-        Assert.assertEquals(3,stories.size());
+        Assert.assertEquals(4,stories.size());
     }
 
     @Test
     public void testGetStoryById(){
         Story story= storyDao.byId(1);
         Assert.assertNotNull(story);
-        Assert.assertEquals("Ella Higgins",story.getName());
+        Assert.assertEquals("Forget-Me-Not",story.getTitle());
     }
 
 
@@ -45,10 +44,6 @@ public class StoryDaoTest {
 
         Story story=new Story();
 
-        story.setName("Jon Smythe");
-        story.setDob(Date.valueOf("2001-01-01"));
-        story.setSchool("Grims Academy");
-        story.setGender("male");
         story.setTitle("The story I wrote");
         story.setText("This story goes on and on and on.....");
 
@@ -59,15 +54,15 @@ public class StoryDaoTest {
         //now retrieve it
         Story s= storyDao.byId(id);
         Assert.assertNotNull(s);
-        Assert.assertEquals("Jon Smythe",s.getName());
+        Assert.assertEquals("The story I wrote",s.getTitle());
 
         //now update it
-        s.setGender("female");
+        s.setTitle("The story I wrote again");
         storyDao.updateStory(s);
 
         Story _w= storyDao.byId(id);
         Assert.assertNotNull(_w);
-        Assert.assertEquals("female",_w.getGender());
+        Assert.assertEquals("The story I wrote again",_w.getTitle());
 
         //now delete it
         storyDao.deleteStory(id);
