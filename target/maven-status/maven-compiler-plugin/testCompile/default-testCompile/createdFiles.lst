@@ -1,0 +1,3 @@
+com/aerian/bbc/configuration/JPATestConfig.class
+com/aerian/bbc/dao/StoryDaoTest.class
+com/aerian/bbc/controller/StoryControllerTest.class
