@@ -3,9 +3,9 @@
 <h3>Requirements</h3>
 
 <ul>
-<li>1) Java 8 installed<li>
-<li>2) Apache Maven 3.3.x installed<li>
-<li>3) Ideally Jetbrains Intellij IDE<li>
+<li>Java 8 installed</li>
+<li>Apache Maven 3.3.x installed</li>
+<li>Ideally Jetbrains Intellij IDE</li>
 </ul>
 
 
